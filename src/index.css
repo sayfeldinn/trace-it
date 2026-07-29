@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Nunito:wght@400;600;700;800&family=Fredoka:wght@600;700&display=swap');
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html, body, #root { height: 100%; }
+body { background: #EDE6D6; font-family: 'Nunito', sans-serif; }
+
+.ti-root {
+  --paper: #FBF7EE;
+  --paper-edge: #EFE6D2;
+  --ink: #2B2B2E;
+  --pine: #1F4B3F;
+  --pine-dark: #16332B;
+  --red-pen: #B5423A;
+  --gold: #D9A62E;
+  --gold-light: #F1CB6E;
+  --muted: #8A8272;
+  font-family: 'Nunito', sans-serif;
+  background: #EDE6D6;
+  min-height: 100%;
+  padding: 28px 16px 40px;
+  display: flex;
+  justify-content: center;
+  color: var(--ink);
+}
+.ti-card { width: 100%; max-width: 520px; }
+.ti-header { text-align: center; margin-bottom: 18px; }
+.ti-title { font-family: 'Caveat', cursive; font-weight: 700; font-size: 44px; color: var(--pine); margin: 0; line-height: 1; }
+.ti-subtitle { font-size: 14px; color: var(--muted); margin-top: 6px; }
+.ti-tabs { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-bottom: 12px; }
+.ti-tab {
+  font-family: 'Nunito', sans-serif; font-weight: 700; font-size: 13px;
+  padding: 7px 14px; border-radius: 999px; border: 2px solid var(--paper-edge);
+  background: #fff; color: var(--muted); cursor: pointer; transition: all .15s ease;
+}
+.ti-tab:hover { border-color: var(--gold); }
+.ti-tab.active { background: var(--pine); border-color: var(--pine); color: #fff; }
+.ti-canvas-card {
+  position: relative; width: min(88vw, 440px); aspect-ratio: 1 / 1;
+  margin: 0 auto; background: var(--paper); border-radius: 14px;
+  box-shadow: 0 2px 0 var(--paper-edge), 0 12px 28px rgba(31,75,63,0.14);
+  border: 1px solid var(--paper-edge); overflow: hidden; touch-action: none;
+}
+.ti-canvas-card canvas { position: absolute; inset: 0; width: 100%; height: 100%; }
+.ti-btn {
+  font-family: 'Nunito', sans-serif; font-weight: 700; font-size: 14px;
+  padding: 10px 20px; border-radius: 10px; border: none; cursor: pointer;
+  transition: transform .1s ease, box-shadow .1s ease;
+}
+.ti-btn:active { transform: scale(0.97); }
+.ti-btn-primary { background: var(--pine); color: #fff; box-shadow: 0 3px 0 var(--pine-dark); }
+.ti-btn-primary:disabled { background: #C9C2AF; box-shadow: 0 3px 0 #B3AC98; cursor: not-allowed; }
+.ti-btn-secondary { background: #fff; color: var(--ink); border: 2px solid var(--paper-edge); }
+.ti-controls { display: flex; gap: 10px; justify-content: center; margin-top: 16px; }
+.ti-error {
+  margin: 14px auto 0; max-width: 400px; background: #FBEAE8;
+  border: 1px solid #E9C0BA; color: var(--red-pen); font-size: 13px;
+  font-weight: 600; padding: 10px 14px; border-radius: 10px; text-align: center;
+}
+.ti-results {
+  margin-top: 22px; background: #fff; border-radius: 14px;
+  border: 1px solid var(--paper-edge); padding: 20px; display: flex;
+  gap: 18px; align-items: center; animation: ti-pop .35s ease;
+}
+@keyframes ti-pop {
+  from { opacity: 0; transform: translateY(6px) scale(0.98); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+.ti-score-badge {
+  flex-shrink: 0; width: 84px; height: 84px; border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, var(--gold-light), var(--gold));
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 3px 0 #B8862080, inset 0 0 0 3px rgba(255,255,255,0.35);
+}
+.ti-score-num { font-family: 'Fredoka', sans-serif; font-weight: 700; font-size: 26px; color: var(--pine-dark); }
+.ti-score-pct { font-size: 13px; font-weight: 700; color: var(--pine-dark); }
+.ti-results-body { flex: 1; }
+.ti-headline { font-family: 'Caveat', cursive; font-size: 30px; font-weight: 700; color: var(--pine); margin: 0 0 6px; }
+.ti-tip { font-family: 'Caveat', cursive; font-size: 19px; color: var(--red-pen); margin: 2px 0; }
+.ti-details {
+  margin-top: 18px; font-size: 12.5px; color: var(--muted); background: #fff;
+  border: 1px solid var(--paper-edge); border-radius: 10px; padding: 10px 14px;
+}
+.ti-details summary { cursor: pointer; font-weight: 700; color: var(--pine); }
+.ti-details p { margin: 8px 0 0; line-height: 1.5; }
